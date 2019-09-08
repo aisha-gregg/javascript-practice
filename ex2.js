@@ -1,5 +1,11 @@
-const input1 = prompt(Enternumber1);
-const input2 = prompt(Enternumber2);
-const a = document.getElementById(input1).value;
-const b = document.getElementById(input2).value;
-alert(a + b, a - b, a * b);
+const a = Number(prompt("Enter number 1"));
+const b = Number(prompt("Enter number2"));
+
+alert(`
+    ${a} +${b} = ${a + b}, 
+    ${a}- ${b}= ${a - b}, 
+    ${a}* ${b}= ${a * b}, 
+    ${a}/ ${b}= ${a / b}, 
+    ${a}** ${b}= ${a ** b}, 
+    ${a}% ${b}= ${a % b}, 
+`);
