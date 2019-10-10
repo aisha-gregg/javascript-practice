@@ -3,7 +3,11 @@ console.assert(getAverage([3, 4, 5]) === 4, "should return the average");
 function getMarks() {
     const persons = [];
     let condition = "";
-    while (condition !== "terminar") {
+    do {
+        condition = prompt("enter ´terminar´ when finished");
+        if (condition === "terminar") {
+            break;
+        }
         const personInfo = prompt("Enter name and 3 marks separated by a comma").split(",");
         const name = personInfo[0];
         const mark1 = Number(personInfo[1]);
@@ -15,14 +19,16 @@ function getMarks() {
         }
 
         persons.push(person);
-        condition = prompt("enter ´terminar´ when finished");
-    }
+    } while (condition !== "terminar");
 
+
+
+    let personsInfo = "";
     for (let i = 0; i < persons.length; i++) {
-        alert(persons[i].name + " " + getAverage(persons[i].marks))
+        personsInfo += persons[i].name + " " + getAverage(persons[i].marks) + "\n";
     }
+    alert(personsInfo);
 }
-
 function getAverage(marks) {
     let sumMarks = 0;
     for (let i = 0; i < marks.length; i++) {
